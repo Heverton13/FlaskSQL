@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Projeto básico com SQL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <title>The Band</title>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <h3>Cadastro de seres humanos </h3>
+    <nav class="navbar navbar-light bg-light">
+    <form method="POST" action="/">
+    <div class="form-row">
+        <div class="col">
+        Nome: </br>
+        <input type="text" class="form-control mr-sm-2"  name="nome"></BR>
+        </div>
+        <div class="col">
+        CPF : </br>
+        <input type="text" class="form-control mr-sm-2"  name="cpf" maxlength="11"></br>
+        </div>
+        <div class="col">
+        Idade: </br>
+        <input type="text" class="form-control mr-sm-2"  name="idade" maxlength="3"></br>
+        </div>
+        <div class="col"></br>
+        <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="ADICIONAR">
+        </div>
+    </div>
+    </form> 
+    </nav>
+    
+    <h1>Pessoas Cadastradas</h1>
+    {% for pessoa in pessoas %}
+        <p>Nome: {{pessoa.name}} | CPF: {{pessoa.cpf}} | Idade: {{pessoa.idade}} Anos</p>
+    {% endfor %}
+    
+</body>
+</html>
