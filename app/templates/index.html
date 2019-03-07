@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Projeto básico com SQL</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <title>The Band</title>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content%}
 
-    <h3>Cadastro de seres humanos </h3>
     <nav class="navbar navbar-light bg-light">
     <form method="POST" action="/">
     <div class="form-row">
@@ -31,10 +23,23 @@
     </form> 
     </nav>
     
-    <h1>Pessoas Cadastradas</h1>
+
+    <table class="table table-bordered"> 
+        <thead class="thead-dark">
+            <th scope="col">ID</th>
+            <th scope="col">NOME</th>
+            <th scope="col">CPF</th>
+            <th scope="col">IDADE</th>
+        </thead>
     {% for pessoa in pessoas %}
-        <p>Nome: {{pessoa.name}} | CPF: {{pessoa.cpf}} | Idade: {{pessoa.idade}} Anos</p>
+        <tbody>
+            <tr>
+                <th scope="row">{{pessoa.id}}</th>
+                <td>{{pessoa.name}}</td>
+                <td>{{pessoa.cpf}}</td>
+                <td>{{pessoa.idade}}</td>
+            </tr>
+        </tbody>
     {% endfor %}
-    
-</body>
-</html>
+    </table>
+{% endblock %}
