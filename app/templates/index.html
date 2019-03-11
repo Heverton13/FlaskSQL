@@ -26,18 +26,18 @@
 
     <table class="table table-bordered"> 
         <thead class="thead-dark">
-            <th scope="col">ID</th>
-            <th scope="col">NOME</th>
             <th scope="col">CPF</th>
+            <th scope="col">NOME</th>
             <th scope="col">IDADE</th>
+            <th scope="col"> </th>
         </thead>
     {% for pessoa in pessoas %}
         <tbody>
             <tr>
-                <th scope="row">{{pessoa.id}}</th>
-                <td>{{pessoa.name}}</td>
                 <td>{{pessoa.cpf}}</td>
+                <td>{{pessoa.name}}</td>
                 <td>{{pessoa.idade}}</td>
+                <td><button type="button" class="btn btn-outline-danger">DELETAR</button></td>
             </tr>
         </tbody>
     {% endfor %}

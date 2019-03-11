@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %} 
+    
+<h1>Erro no cadastro</h1>
+<p>Você tentou cadastrar uma pessoa com mesmo cpf.
+<p><a href="{{ url_for('index') }}">volte para a tela de cadastro</a>
+{%  endblock %}
